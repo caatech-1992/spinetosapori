@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spineto Sapori - Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Spineto Sapori</h1>
+            <p>...e ti senti a casa</p>
+        </div>
+    </header>
+
+    <section class="search-bar">
+        <input type="text" id="searchInput" placeholder="Cerca un piatto..." onkeypress="handleKeyPress(event)">
+        <button onclick="searchDish()">Cerca</button>
+    </section>
+
+    <section class="menu">
+        <h2>Il Nostro Menu</h2>
+
+		  <!-- ROSTICCERIA -->
+        <div class="menu-category">
+            <div class="category-header" onclick="toggleCategory('ROSTICCERIA')">
+                <h3>ROSTICCERIA</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="category-content" id="ROSTICCERIA">
+                <div class="menu-item" id="PatatineFritte">
+                    <h4>Patatine Fritte</h4>
+                    <p class="price">€2.00</p>
+                </div>
+                <div class="menu-item" id="Arancini">
+                    <h4>Arancini</h4>
+                    <p class="price">€2,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Riso, Ragù, Piselli, Mozzarella</p>
+                </div>
+                 <div class="menu-item" id="Polpetteriso">
+                    <h4>Polpette di Riso</h4>
+                    <p class="price">€1.00</p>
+                </div>
+				<div class="menu-item" id="PolpetteCarne">
+                    <h4>Polpette di Carne</h4>
+                    <p class="price">€1.00</p>
+                </div>
+				<div class="menu-item" id="Polpettemelanzane">
+                    <h4>Polpette di Melanzane</h4>
+                    <p class="price">€1.00</p>
+                </div>
+            </div>
+        </div>
+		
+				  <!-- ANTIPASTI -->
+        <div class="menu-category">
+            <div class="category-header" onclick="toggleCategory('ANTIPASTI')">
+                <h3>ANTIPASTI</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="category-content" id="ANTIPASTI">
+                <div class="menu-item" id="Antipastodellacasa">
+                    <h4>Antipasto della Casa</h4>
+                    <p class="price">€6,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Salumi, Formaggi, Sott'olio, Portate Calde </p>
+                </div>
+            </div>
+        </div>
+		
+        <!-- Calzoni -->
+        <div class="menu-category">
+            <div class="category-header" onclick="toggleCategory('Calzoni')">
+                <h3>CALZONI</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="category-content" id="Calzoni">
+                <div class="menu-item" id="Classico">
+                    <h4>Classico</h4>
+                    <p class="price">€2.00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro e mozzarella.</p>
+                </div>
+                <div class="menu-item" id="Cotto">
+                    <h4>Cotto</h4>
+                    <p class="price">€2,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Cotto</p>
+                </div>
+                <div class="menu-item" id="Salame">
+                    <h4>Salame</h4>
+                    <p class="price">€2,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Salame</p>
+                </div>
+                <div class="menu-item" id="Acciughe">
+                    <h4>Acciughe</h4>
+                    <p class="price">€2,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Acciughe</p>
+                </div>
+                <div class="menu-item" id="Zucca e Speck">
+                    <h4>Zucca e Speck</h4>
+                    <p class="price">€2,80</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Zucca, Speck</p>
+                </div>
+                <div class="menu-item" id="Gorgonzola e Cotto">
+                    <h4>Gorgonzola e Cotto</h4>
+                    <p class="price">€2,80</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Gorgonzola, Cotto</p>
+                </div>
+                <div class="menu-item" id="Gorgonzola e Speck">
+                    <h4>Gorgonzola e Speck</h4>
+                    <p class="price">€2,80</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Gorgonzola, Speck</p>
+                </div>
+                <div class="menu-item" id="Gorgonzola e Salame">
+                    <h4>Gorgonzola e Salame</h4>
+                    <p class="price">€2,80</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Gorgonzola, Salame</p>
+                </div>
+                <div class="menu-item" id="Nduja">
+                    <h4>Nduja</h4>
+                    <p class="price">€2,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Nduja</p>
+                </div>
+                <div class="menu-item" id="Cotto e Sottiletta">
+                    <h4>Cotto e Sottiletta</h4>
+                    <p class="price">€2,80</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Sottiletta e Cotto</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pizze Rosse -->
+        <div class="menu-category">
+            <div class="category-header" onclick="toggleCategory('Pizze Rosse')">
+                <h3>PIZZE ROSSE</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="category-content" id="Pizze Rosse">
+                <div class="menu-item" id="Margherita">
+                    <h4>Margherita</h4>
+                    <p class="price">€5.00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Basilico.</p>
+                </div>
+                <div class="menu-item" id="4 Stagioni">
+                    <h4>4 Stagioni</h4>
+                    <p class="price">€7.00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Funghi, Olive nere, Carciofi, Cotto.</p>
+                </div>
+                <div class="menu-item" id="Capricciosa">
+                    <h4>Capricciosa</h4>
+                    <p class="price">€7,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Funghi, Olive nere, Carciofi, Acciughe, Cotto.</p>
+                </div>
+                <div class="menu-item" id="salame">
+                    <h4>Salame</h4>
+                    <p class="price">€6,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Salame piccante.</p>
+                </div>
+                <div class="menu-item" id="Ortolana">
+                    <h4>Ortolana</h4>
+                    <p class="price">€7,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Peperoni, Melanzane, Zucchine, Patate mpacchiuse.</p>
+                </div>
+                <div class="menu-item" id="Wurstel">
+                    <h4>Wurstel</h4>
+                    <p class="price">€6,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Wurstel.</p>
+                </div>
+                <div class="menu-item" id="Americana">
+                    <h4>Americana</h4>
+                    <p class="price">€7,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Wurstel, Patatine.</p>
+                </div>
+                <div class="menu-item" id="Silana">
+                    <h4>Silana</h4>
+                    <p class="price">€7,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Salsiccia Fresca, Funghi e Patate mpacchiuse.</p>
+                </div>
+                <div class="menu-item" id="Napoletana">
+                    <h4>Napoletana</h4>
+                    <p class="price">€6,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Pomodoro, Mozzarella, Alici.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pizze Bianche -->
+        <div class="menu-category">
+            <div class="category-header" onclick="toggleCategory('Pizze Bianche')">
+                <h3>PIZZE BIANCHE</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="category-content" id="Pizze Bianche">
+                <div class="menu-item" id="Primavera">
+                    <h4>Primavera</h4>
+                    <p class="price">€7,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Rucola, Crudo, Pomodorini, Scaglie di parmigiano.</p>
+                </div> 
+                <div class="menu-item" id="4 Formaggi">
+                    <h4>4 Formaggi</h4>
+                    <p class="price">€7,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Gorgonzola, Parmiggiano, Pecorino.</p>
+                </div>
+                <div class="menu-item" id="Tonno e Mais">
+                    <h4>Tonno e Mais</h4>
+                    <p class="price">€7,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Tonno, Mais, Pomodorini</p>
+                </div>
+                <div class="menu-item" id="ZuccaeSpeck">
+                    <h4>Zucca e Speck</h4>
+                    <p class="price">€7,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Crema di zucca, Speck</p>
+                </div>
+                <div class="menu-item" id="Emilia">
+                    <h4>Emilia</h4>
+                    <p class="price">€7,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Mortadella, Crema di Pistacchio e Granella di Pistacchio</p>
+                </div>
+                <div class="menu-item" id="Patate e Pancetta">
+                    <h4>Patate e Pancetta</h4>
+                    <p class="price">€7,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Patate mpacchiuse, Pancetta</p>
+                </div>
+                <div class="menu-item" id="Tonno e Cipolla">
+                    <h4>Tonno e Cipolla</h4>
+                    <p class="price">€6,50</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Tonno, Cipolla</p>
+                </div>
+                <div class="menu-item" id="Carmine">
+                    <h4>Carmine</h4>
+                    <p class="price">€8,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Olive Nere, Tonno, Salsiccia fresca, Patate mpacchiuse</p>
+                </div>
+                <div class="menu-item" id="Gianmattia">
+                    <h4>Gianmattia</h4>
+                    <p class="price">€8,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Stracciatella, Bresaola, Zucchine, Pomodorini, Basilico</p>
+                </div>
+                <div class="menu-item" id="Maurizio">
+                    <h4>Maurizio</h4>
+                    <p class="price">€8,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Funghi, Carciofi, Pomodori secchi, Cotto, Gorgonzola</p>
+                </div>
+                <div class="menu-item" id="Spilinga">
+                    <h4>Spilinga</h4>
+                    <p class="price">€8,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Mozzarella, Stracciatella, Nduja, Cipolla Caramellata</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bibite -->
+        <div class="menu-category">
+            <div class="category-header" onclick="toggleCategory('Bibite')">
+                <h3>BIBITE</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="category-content" id="Bibite">
+                <div class="menu-item" id="Vinodellacasa">
+                    <h4>Vino Della casa 1lt</h4>
+                    <p class="price">€4.00</p>
+                </div>
+                <div class="menu-item" id="Vinoimbottigliato">
+                    <h4>Vino Imbottigliato 0,75cl</h4>
+                    <p class="price">€8.00 / €10.00</p>
+                </div>
+                <div class="menu-item" id="Tuborg">
+                    <h4>Tuborg 0,66cl</h4>
+                    <p class="price">€7.50</p>
+                </div>
+                <div class="menu-item" id="Nastroazzurro">
+                    <h4>Nastro Azzurro 0,66cl</h4>
+                    <p class="price">€3.50</p>
+                </div>
+                <div class="menu-item" id="Heniken">
+                    <h4>Heniken 0,66cl</h4>
+                    <p class="price">€3.50</p>
+                </div>
+                <div class="menu-item" id="CocaCola">
+                    <h4>Coca Cola 1,5l</h4>
+                    <p class="price">€3.00</p>
+                </div>
+                <div class="menu-item" id="Fanta">
+                    <h4>Fanta 1,5l</h4>
+                    <p class="price">€2.50</p>
+                </div>
+                <div class="menu-item" id="CocaFantaSpriteLATTINA">
+                    <h4>Coca - Fanta - Sprite LATTINA</h4>
+                    <p class="price">€2.00</p>
+                </div>
+                <div class="menu-item" id="Gassosa">
+                    <h4>Gassosa 1l</h4>
+                    <p class="price">€2.00</p>
+                </div>
+                <div class="menu-item" id="Gassosa033">
+                    <h4>Gassosa 0.33 cl</h4>
+                    <p class="price">€1.50</p>
+                </div>
+                <div class="menu-item" id="AcquaFrizzante">
+                    <h4>Acqua Frizzante 1l</h4>
+                    <p class="price">€1.50</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dolci -->
+        <div class="menu-category">
+            <div class="category-header" onclick="toggleCategory('Dolci')">
+                <h3>DOLCI</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="category-content" id="Dolci">
+                <div class="menu-item" id="Dolcidellacasa">
+                    <h4>Dolci Della Casa</h4>
+                    <p class="price">€1.00 / 2,50€</p>
+                </div>
+                <div class="menu-item" id="Pizzaallanutella">
+                    <h4>Pizza alla Nutella</h4>
+                    <p class="price">€6.00</p>
+                </div>
+                <div class="menu-item" id="Calzoneallanutella">
+                    <h4>Calzane alla Nutella</h4>
+                    <p class="price">€2,50</p>
+                </div>
+                <div class="menu-item" id="Cheesecake">
+                    <h4>Cheesecake</h4>
+                    <p class="price">€5,00</p>
+                    <p class="ingredients"><strong>Ingredienti:</strong> Cioccolato, Caramello, Frutti di Bosco.</p>
+                </div>
+                <div class="menu-item" id="Tiramisu">
+                    <h4>Tiramisù</h4>
+                    <p class="price">€5,00</p>
+                </div>
+                <div class="menu-item" id="DeliziaalLimone">
+                    <h4>Delizia al Limone</h4>
+                    <p class="price">€5,00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Grazie per aver scelto Spineto Sapori</p>
+                <p>C.da Spineto - 87051 APRIGLIANO (CS)</p>
+                <p>Tel. 366 28 20 167 - 331 28 67 311 - 346 72 44 407</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://wa.me/393467244407" class="social-icon" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100057558936647" class="social-icon" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/spinetosapori/?hl=it" class="social-icon" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+				<a href="https://www.google.com/maps?rlz=1C1ONGR_itIT1001IT1001&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMhAIARAuGK8BGMcBGIAEGI4FMgYIAhAjGCcyBwgDEAAYgAQyCAgEEAAYFhgeMgYIBRBFGD0yBggGEEUYPTIGCAcQRRg90gEIMTczOWowajSoAgCwAgE&um=1&ie=UTF-8&fb=1&gl=it&sa=X&geocode=KVVVVdSAdUATMRrJa-uW37jG&daddr=SP243,+87051+Manco+Spineto+Migliari+CS" class="social-icon" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/500px-Google_Maps_icon_%282020%29.svg.png" alt="Google Maps">
+                </a>
+				<a href="https://embed.skylinewebcams.com/media.php?id=5217&w=750" class="social-icon" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/214/214713.png" alt="Live Webcam">
+    </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funzione per aprire/chiudere le categorie
+        function toggleCategory(id) {
+            const content = document.getElementById(id);
+            const icon = content.previousElementSibling.querySelector('.toggle-icon');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                icon.textContent = "▼";
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.display = "block";
+                icon.textContent = "▼";
+                icon.style.transform = "rotate(180deg)";
+            }
+        }
+
+        // Funzione per gestire il tasto Invio
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                searchDish();
+            }
+        }
+
+        // Funzione per la ricerca
+        function searchDish() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const dishes = document.querySelectorAll('.menu-item');
+            let found = false;
+
+            dishes.forEach(dish => {
+                const dishName = dish.querySelector('h4').textContent.toLowerCase();
+                if (dishName.includes(searchTerm)) {
+                    const category = dish.closest('.category-content');
+                    const categoryHeader = category.previousElementSibling;
+
+                    if (category.style.display !== "block") {
+                        toggleCategory(category.id);
+                    }
+
+                    dish.style.backgroundColor = '#f0f0f0';
+                    dish.style.boxShadow = '0 0 10px rgba(0,0,0,0.1)';
+                    
+                    setTimeout(() => {
+                        dish.style.backgroundColor = '#fff';
+                        dish.style.boxShadow = 'none';
+                    }, 3000);
+
+                    dish.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                alert("Nessun piatto trovato con questo nome.");
+            }
+        }
+    </script>
+</body>
+</html>
