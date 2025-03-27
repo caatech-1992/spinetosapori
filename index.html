@@ -420,13 +420,13 @@
                         toggleCategory(category.id);
                     }
 
-                    dish.style.backgroundColor = '#f0f0f0';
+                    dish.style.backgroundColor = '#ebfcd2';
                     dish.style.boxShadow = '0 0 10px rgba(0,0,0,0.1)';
                     
                     setTimeout(() => {
                         dish.style.backgroundColor = '#fff';
                         dish.style.boxShadow = 'none';
-                    }, 3000);
+                    }, 5000);
 
                     dish.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     found = true;
